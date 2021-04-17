@@ -3,7 +3,7 @@ version: '3.3'
 services:
    db:
      image: mysql:latest
-     container_name: evolve_db
+     container_name: ${CONTAINER_NAME}_db
      command: '--default-authentication-plugin=mysql_native_password'
      ports:
        - "3306:3306"
@@ -20,7 +20,7 @@ services:
      depends_on:
        - db
      image: wordpress:latest
-     container_name: evolve_wordpress
+     container_name: ${CONTAINER_NAME}_wordpress
      ports:
        - "8000:80"
      restart: always
