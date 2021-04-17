@@ -32,7 +32,7 @@ services:
 
   #  client:
   #     image: evolve-web-client:local
-  #     container_name: evolve_client
+  #     container_name: ${CONTAINER_NAME}_client
   #     ports:
   #        - "5000:3000"
 
