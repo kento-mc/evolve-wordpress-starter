@@ -46,6 +46,7 @@ services:
     image: mysql:5.7
     volumes:
       - db_data:/var/lib/mysql
+    container_name: ${CONTAINER_NAME}_db
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: somewordpress
@@ -57,6 +58,7 @@ services:
     depends_on:
       - db
     image: wordpress:latest
+    container_name: ${CONTAINER_NAME}_wordpress
     ports:
       - "8000:80"
     restart: always
