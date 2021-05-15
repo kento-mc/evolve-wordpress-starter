@@ -2,7 +2,7 @@ version: "3.9"
     
 services:
   db:
-    image: mysql:latest
+    image: mysql:5.7
     volumes:
       - db_data:/var/lib/mysql
     container_name: ${CONTAINER_NAME}_db
@@ -16,7 +16,7 @@ services:
   wordpress:
     depends_on:
       - db
-    image: wordpress:5.5
+    image: wordpress:latest
     container_name: ${CONTAINER_NAME}_wordpress
     ports:
       - "8000:80"
