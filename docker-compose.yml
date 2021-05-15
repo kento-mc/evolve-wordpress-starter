@@ -1,44 +1,3 @@
-# version: '3.9'
-
-# services:
-#   db:
-#     image: mysql:latest
-#     container_name: ${CONTAINER_NAME}_db
-#     # command: '--default-authentication-plugin=mysql_native_password'
-#     # ports:
-#     #   - "3306:3306"
-#     volumes:
-#       - db_data:/var/lib/mysql
-#     restart: always
-#     environment:
-#       MYSQL_ROOT_PASSWORD: somewordpress
-#       MYSQL_DATABASE: wordpress
-#       MYSQL_USER: wordpress
-#       MYSQL_PASSWORD: wordpress
-
-#   wordpress:
-#     depends_on:
-#       - db
-#     image: wordpress:latest
-#     container_name: ${CONTAINER_NAME}_wordpress
-#     ports:
-#       - "8000:80"
-#     restart: always
-#     volumes:
-#     #  - ./wordpress/wp-config.php:/var/www/html/wp-config.php
-#       - ./wordpress/themes:/var/www/html/wp-content/themes
-#       - ./wordpress/plugins:/var/www/html/wp-content/plugins
-#       - ./wordpress/uploads:/var/www/html/wp-content/uploads
-
-#   #  client:
-#   #     image: evolve-web-client:local
-#   #     container_name: ${CONTAINER_NAME}_client
-#   #     ports:
-#   #        - "5000:3000"
-
-# volumes:
-#     db_data: {}
-
 version: "3.9"
     
 services:
@@ -62,6 +21,11 @@ services:
     ports:
       - "8000:80"
     restart: always
+    volumes:
+      - ./wordpress/wp-config.php:/var/www/html/wp-config.php
+      - ./wordpress/themes:/var/www/html/wp-content/themes
+      - ./wordpress/plugins:/var/www/html/wp-content/plugins
+      - ./wordpress/uploads:/var/www/html/wp-content/uploads
     environment:
       WORDPRESS_DB_HOST: db:3306
       WORDPRESS_DB_USER: wordpress

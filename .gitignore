@@ -1,6 +1,4 @@
 wordpress/uploads
-wordpress/plugins/evolve-api/custom-post-types.php
-wordpress/plugins/evolve-api/plugin.php
 wordpress/plugins/akismet
 wordpress/plugins/hello.php
 wordpress/themes/evolve
