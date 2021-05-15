@@ -21,7 +21,6 @@
       include(__DIR__ . '/custom-post-types.php');
       add_action( 'rest_api_init', array( $this, 'create_ACF_meta_in_REST' ));
       add_action( 'rest_api_init', array( $this, 'add_image' ));
-      add_action( 'rest_api_init', array( $this, 'add_custom_fields' ));
     }
 
     /**
