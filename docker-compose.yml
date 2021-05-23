@@ -31,5 +31,12 @@ services:
       WORDPRESS_DB_USER: wordpress
       WORDPRESS_DB_PASSWORD: wordpress
       WORDPRESS_DB_NAME: wordpress
+  
+  # client:
+  #   image: evolve-client:local
+  #   container_name: ${CONTAINER_NAME}_client
+  #   ports:
+  #       - "3000:3000"
+  
 volumes:
   db_data: {}
